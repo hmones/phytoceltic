@@ -1,0 +1,89 @@
+<!-- FOLLOWING MENU -->
+<div class="ui large top fixed hidden menu">
+    <div class="ui container">
+        <a href="{{'home'|page}}" class="header item">
+            <img class="logo" src="{{ 'assets/images/logo-icon.png'|theme }}">
+        </a>
+        <div class="item">
+          <div class="ui dropdown">
+            {{'company'|_}}
+            <div class="menu drop">
+              <a class="item" href="{{ 'about-us'|staticPage }}">{{'about-us'|_}}</a>
+              <a class="item" href="{{ 'team'|staticPage }}">{{'team'|_}}</a>
+              <a class="item" href="{{ 'values'|staticPage }}">{{'values'|_}}</a>
+              <a class="item" href="{{ 'collaborations'|staticPage }}">{{'collaborations'|_}}</a>
+              <a class="item" href="{{ 'careers'|staticPage }}">{{'careers'|_}}</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="ui dropdown">
+            {{'innovation'|_}}
+            <div class="menu drop">
+              <a class="item" href="{{ 'breeding-methods'|staticPage }}">{{'breeding-methods'|_}}</a>
+              <a class="item" href="{{ 'stem-cell-biotechnology'|staticPage }}">{{'stem-cell-biotechnology'|_}}</a>
+              <a class="item" href="{{ 'biosynthesis-regulations'|staticPage }}">{{'biosynthesis-regulations'|_}}</a>
+              <a class="item" href="{{ 'extraction'|staticPage }}">{{'extraction'|_}}</a>
+              <a class="item" href="{{ 'good-scientific-practice'|staticPage }}">{{'good-scientific-practice'|_}}</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="ui dropdown">
+            {{'products'|_}}
+            <div class="menu drop">
+              <a class="item" href="{{ 'products'|staticPage }}">{{'products'|_}}</a>
+              <a class="item" href="{{ 'quality-and-safety'|staticPage }}">{{'quality-and-safety'|_}}</a>
+            </div>
+          </div>
+        </div>
+        <a class="item" href="{{ 'posts'|page }}">{{'news-and-dates'|_}}</a>
+        <div class="right menu">
+            <div class="item">
+                <a class="ui olive button" href="{{ 'contact'|page }}">{{'contact'|_}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SIDEBAR MENU -->
+<div class="ui vertical sidebar menu">
+    <a href="{{'home'|page}}" class="header item">
+        <img class="logo" src="{{ 'assets/images/logo.png'|theme }}">
+    </a>
+    <div class="item">
+        <div class="header">{{'company'|_}}</div>
+        <div class="menu" tabindex="1">
+          <a class="item" href="{{ 'about-us'|staticPage }}">{{'about-us'|_}}</a>
+          <a class="item" href="{{ 'team'|staticPage }}">{{'team'|_}}</a>
+          <a class="item" href="{{ 'values'|staticPage }}">{{'values'|_}}</a>
+          <a class="item" href="{{ 'collaborations'|staticPage }}">{{'collaborations'|_}}</a>
+        </div>
+    </div>
+    <div class="item">
+        <div class="header">{{'innovation'|_}}</div>
+        <div class="menu" tabindex="2">
+          <a class="item" href="{{ 'breeding-methods'|staticPage }}">{{'breeding-methods'|_}}</a>
+          <a class="item" href="{{ 'stem-cell-biotechnology'|staticPage }}">{{'stem-cell-biotechnology'|_}}</a>
+          <a class="item" href="{{ 'biosynthesis-regulations'|staticPage }}">{{'biosynthesis-regulations'|_}}</a>
+          <a class="item" href="{{ 'extraction'|staticPage }}">{{'extraction'|_}}</a>
+          <a class="item" href="{{ 'good-scientific-practice'|staticPage }}">{{'good-scientific-practice'|_}}</a>
+        </div>
+    </div>
+    <div class="item">
+        <div class="header">{{'products'|_}}</div>
+        <div class="menu" tabindex="3">
+          <a class="item" href="{{ 'products'|staticPage }}">{{'products'|_}}</a>
+          <a class="item" href="{{ 'quality-and-safety'|staticPage }}">{{'quality-and-safety'|_}}</a>
+        </div>
+    </div>
+    <a class="item" href="{{ 'posts'|page }}">{{'news-and-dates'|_}}</a>
+    <a class="item" href="{{ 'contact'|page }}">{{'contact'|_}}</a>
+    <div class="item" tabindex="0">
+        <div class="header">Language/Sprache</div>
+        <div class="menu" tabindex="4">
+            <a class="item" href="#" data-request="onSwitchLocale" data-request-data="locale: 'de'"><i class="de flag"></i>Deutsch</a>
+            <a class="item" href="#" data-request="onSwitchLocale" data-request-data="locale: 'en'"><i class="us flag"></i>English</a>
+        </div>
+    </div>
+</div>

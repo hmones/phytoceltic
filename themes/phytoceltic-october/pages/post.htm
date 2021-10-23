@@ -1,0 +1,37 @@
+title = "Dates and News"
+url = "/news/:slug"
+layout = "blog-post"
+is_hidden = 0
+==
+<?php
+use RainLab\Blog\Models\Post;
+
+function onStart(){
+  $this['post'] = Post::where('slug',$this->param('slug'))->first();
+}
+
+?>
+==
+{% partial 'header' currpage = 'news-and-dates' %}
+<br><br>
+<div class="ui container">
+  <div class="ui middle aligned stackable grid container">
+    <div class="ui padded segment">
+      <img src="
+      {% if post.featured_images[0].path != null %}
+        {{ post.featured_images[0].path }}
+      {% else %}
+        {{'assets/images/logo.png'|theme}}
+      {% endif %}
+      " alt="{{post.title}}"  class="ui large bordered rounded left floated image">
+      <h2 class="ui olive header" style="margin-top:11px;">{{post.title}}</h2>
+      <span> <i class="clock outline small icon"></i> <small class="description">Published {{post.created_at.diffForHumans()}}</small> </span>
+      <br><br>
+      {{post.content}}
+      <br><br>
+    </div>
+
+  </div>
+
+  <br><br>
+</div>

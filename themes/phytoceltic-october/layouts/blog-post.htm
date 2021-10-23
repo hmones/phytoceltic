@@ -1,0 +1,67 @@
+description = "Blog Post layout"
+[localePicker]
+forceUrl = 0
+==
+<!DOCTYPE html>
+<html class="no-js" lang="">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136087974-1"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-136087974-1');
+        </script>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Bioactive Molecules for Tomorrow's Health - PhytoCeltic Life Sciences</title>
+        <meta name="description" content="{{'home-header'|_}}{{'home-aboutus'|_}}" />
+        <meta name="keywords" content="phytoceltic,breeding,biosynthesis,extraction,good scientific practice,stem cell, biotechnology" />
+        <meta name="robots" content="index,follow" />
+        <meta name="DC.title" content="PhytoCeltic website" />
+        <meta name="copyright" content="Phytoceltic Life Sciences UG (Haftungsbeschränkt) is German’s privately-owned company in the field of phyto-pharmaceuticals and plant biotechnology industries" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="apple-touch-icon" sizes="57x57" href="{{'assets/images/favicon/apple-icon-57x57.png'|theme}}">
+        <link rel="apple-touch-icon" sizes="60x60" href="{{'assets/images/favicon/apple-icon-60x60.png'|theme}}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{'assets/images/favicon/apple-icon-72x72.png'|theme}}">
+        <link rel="apple-touch-icon" sizes="76x76" href="{{'assets/images/favicon/apple-icon-76x76.png'|theme}}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{'assets/images/favicon/apple-icon-114x114.png'|theme}}">
+        <link rel="apple-touch-icon" sizes="120x120" href="{{'assets/images/favicon/apple-icon-120x120.png'|theme}}">
+        <link rel="apple-touch-icon" sizes="144x144" href="{{'assets/images/favicon/apple-icon-144x144.png'|theme}}">
+        <link rel="apple-touch-icon" sizes="152x152" href="{{'assets/images/favicon/apple-icon-152x152.png'|theme}}">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{'assets/images/favicon/apple-icon-180x180.png'|theme}}">
+        <link rel="icon" type="image/png" sizes="192x192"  href="{{'assets/images/favicon/android-icon-192x192.png'|theme}}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{{'assets/images/favicon/favicon-32x32.png'|theme}}">
+        <link rel="icon" type="image/png" sizes="96x96" href="{{'assets/images/favicon/favicon-96x96.png'|theme}}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{{'assets/images/favicon/favicon-16x16.png'|theme}}">
+        <link rel="manifest" href="{{'assets/images/favicon/manifest.json'|theme}}">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="{{'assets/images/favicon/ms-icon-144x144.png'|theme}}">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="stylesheet" href="{{[
+            'assets/dist/semantic.min.css',
+            'assets/less/magic.less'
+        ]|theme }}" />
+        {% styles %}
+    </head>
+    <body>
+        {% partial 'mainmenu' %}
+        <div class="ui pusher">
+          {% partial 'desktopmenu' %}
+          {% page %}
+          {% partial 'footer' %}
+        </div>
+        <script src="{{[
+            'assets/js/vendor/jquery.min.js',
+            'assets/dist/semantic.min.js',
+            'assets/js/magic.js',
+        ]|theme }}"></script>
+        <script src="{{'assets/js/vendor/typed.js'|theme}}"></script>
+        {% framework extras %}
+        {% scripts %}
+    </body>
+</html>

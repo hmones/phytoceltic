@@ -1,0 +1,54 @@
+title = "News and Dates"
+url = "/news-and-dates"
+layout = "default"
+is_hidden = 0
+==
+<?php
+use RainLab\Blog\Models\Post;
+
+function onStart(){
+  $this['posts'] = Post::orderBy('created_at','desc')->paginate(9);
+}
+
+?>
+==
+  <div class="ui container">
+    <div class="ui three column stackable grid">
+      {% for post in posts %}
+        <div class="column">
+          <div class="ui centered center aligned fluid link card">
+              <div class="ui image">
+                <a href="{{'post'|page({ slug: post.slug})}}">
+                <img src="
+                {% if post.featured_images[0].path != null %}
+                  {{ post.featured_images[0].path }}
+                {% else %}
+                  {{'assets/images/logo.png'|theme}}
+                {% endif %}
+                " alt="{{post.title}}" ></a>
+              </div>
+              <div class="content">
+                <div class="left aligned meta">
+                  <span class="date"> <i class="clock outline small icon"></i> <small>{{post.published_at.diffForHumans()}}</small> </span>
+                </div>
+                <div class="left aligned description">
+                  <p href="{{'post'|page({ slug: post.slug})}}" class="dark-text">{{str_limit(post.title,150)}}</p>
+                </div>
+              </div>
+              <a class="ui bottom attached olive button" href="{{'post'|page({ slug: post.slug})}}">
+                {{'learn-more' | _}}<i class="right arrow icon"></i>
+              </a>
+          </div>
+        </div>
+      {% else %}
+      <h2 class="ui olive horizontal divider header">Coming Soon</h2>
+      {% endfor %}
+    </div>
+    <br><br>
+  </div>
+
+  <div class="ui padded center aligned basic segment">
+    {{ posts.render('pagination::semantic-ui')|raw }}
+  </div>
+
+<br><br>

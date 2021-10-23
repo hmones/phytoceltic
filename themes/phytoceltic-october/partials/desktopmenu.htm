@@ -1,0 +1,64 @@
+<div class="ui grid">
+  <div class="ui container">
+      <div class="ui padded basic segment">
+        <div class="ui large secondary pointing menu" id="desktopmenu">
+            <a class="toc item">
+                <i class="sidebar icon"></i>
+            </a>
+            <a href="{{'home'|page}}"><img src="{{'assets/images/logo.png'|theme}}" alt="" style="width: 230px;height: 95%;"></a>
+            <div class="right item">
+              <div class="active item">
+                <div class="ui dropdown">
+                    {{'company'|_}}
+                    <div class="menu drop">
+                      <a class="item" href="{{ 'about-us'|staticPage }}">{{'about-us'|_}}</a>
+                      <a class="item" href="{{ 'team'|staticPage }}">{{'team'|_}}</a>
+                      <a class="item" href="{{ 'values'|staticPage }}">{{'values'|_}}</a>
+                      <a class="item" href="{{ 'collaborations'|staticPage }}">{{'collaborations'|_}}</a>
+                      <a class="item" href="{{ 'careers'|staticPage }}">{{'careers'|_}}</a>
+                    </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="ui dropdown">
+                    {{'innovation'|_}}
+                    <div class="menu drop">
+                      <a class="item" href="{{ 'breeding-methods'|staticPage }}">{{'breeding-methods'|_}}</a>
+                      <a class="item" href="{{ 'stem-cell-biotechnology'|staticPage }}">{{'stem-cell-biotechnology'|_}}</a>
+                      <a class="item" href="{{ 'biosynthesis-regulations'|staticPage }}">{{'biosynthesis-regulations'|_}}</a>
+                      <a class="item" href="{{ 'extraction'|staticPage }}">{{'extraction'|_}}</a>
+                      <a class="item" href="{{ 'good-scientific-practice'|staticPage }}">{{'good-scientific-practice'|_}}</a>
+                    </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="ui dropdown">
+                    {{'products'|_}}
+                    <div class="menu drop">
+                      <a class="item" href="{{ 'products'|staticPage }}">{{'products'|_}}</a>
+                      <a class="item" href="{{ 'quality-and-safety'|staticPage }}">{{'quality-and-safety'|_}}</a>
+                    </div>
+                </div>
+              </div>
+              <a class="item" href="{{ 'posts'|page }}">{{'news-and-dates'|_}}</a>
+              <a class="item" href="{{ 'contact'|page }}">{{'contact'|_}}</a>
+              <a data-request="onSwitchLocale" data-request-data="locale: 'en'" class="item"> <i class="us flag"></i> </a>
+              <a data-request="onSwitchLocale" data-request-data="locale: 'de'" class="item"><i class="de flag"></i></a>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+{% put scripts %}
+<script>
+    $(document)
+        .ready(function() {
+          $('.ui.dropdown')
+          .dropdown({
+            on: 'hover'
+          });
+        })
+    ;
+</script>
+{% endput %}

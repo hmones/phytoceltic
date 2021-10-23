@@ -1,0 +1,8 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@fontSize    : 20px;
+@green       : #4a8337;
+@olive       : #72bd42;
+@emSize      : 20px;

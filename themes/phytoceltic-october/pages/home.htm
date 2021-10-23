@@ -1,0 +1,217 @@
+title = "Home"
+url = "/"
+layout = "home"
+is_hidden = 0
+==
+<?php
+use RainLab\Blog\Models\Post;
+
+function onStart(){
+  $this['recent_posts'] = Post::orderBy('created_at','desc')->take(7)->get();
+}
+
+?>
+==
+<div class="ui vertical masthead center aligned segment">
+    <div class="ui text container">
+        <h1 class="ui header">
+            {{'home-header'|_}}
+        </h1>
+        <div id="subhead">
+          <h2>{{'stem-cell-biotechnology'|_}}</h2>
+          <h2>{{'biosynthesis-regulations'|_}}</h2>
+          <h2>{{'breeding-methods'|_}}</h2>
+        </div>
+        <span id="subhead-typed"></span>
+        <br>
+        <a class="ui green start button" href="{{ 'about-us'|staticPage }}">{{'learn-more'|_}} <i class="right arrow icon"></i></a>
+    </div>
+    <img src="{{'assets/images/slider.png'|theme}}" alt="" style="position:absolute;width:20vw;bottom:0;right:0;">
+</div>
+
+
+
+<div class="ui sixteen wide stackable grid" id="aboutus">
+  <div class="eight wide column" style="background-image:url('{{'assets/images/slider3.png'|theme}}');background-repeat:no-repeat;background-size:cover;min-height: 500px;">
+  </div>
+  <div class="eight wide column">
+    <div class="ui very padded basic segment">
+      <h1 class="ui header">{{'about-us'|_}}</h1>
+      <br>
+      <p style="line-height: 2.1;">{{'home-aboutus'|_}}</p>
+      <br>
+      <a type="button" class="ui olive button" name="button" href="{{ 'about-us'|staticPage }}">{{'learn-more'|_}} <i class="right arrow icon"></i></a>
+    </div>
+  </div>
+</div>
+
+
+<div id="innovation" class="ui vertical masthead center aligned segment">
+    <h1 class="ui centered header" style="margin-top:80px;">
+    <img src="{{'assets/images/services/CONSULTING.png'|theme}}" alt="" class="ui image">  {{'innovation'|_}}
+    </h1>
+    <br>
+    <div class="ui text justified container" style="background-color:rgba(255,255,255,0.2);">
+      <div class="ui padded basic segment">{{'home-innovation'|_}}</div>
+    </div>
+    <br><br><br>
+    <div class="ui fluid container">
+      <div class="ui centered cards">
+        <div class="card">
+          <img src="{{'assets/images/services/breeding.svg'|theme}}" alt="" class="ui small centered image">
+          <h4 class="ui header">{{'breeding-methods'|_}}</h4>
+          <br>
+          <a type="button" class="ui default button" name="button" href="{{ 'breeding-methods'|staticPage }}">{{'learn-more'|_}} <i class="right arrow icon"></i></a>
+        </div>
+        <div class="card">
+          <img src="{{'assets/images/services/stem-cell.svg'|theme}}" alt="" class="ui small centered image">
+          <h4 class="ui header">{{'stem-cell-biotechnology'|_}} </h4>
+          <br>
+          <a type="button" class="ui default button" name="button" href="{{ 'stem-cell-biotechnology'|staticPage }}">{{'learn-more'|_}} <i class="right arrow icon"></i></a>
+        </div>
+        <div class="card">
+          <img src="{{'assets/images/services/extraction.svg'|theme}}" alt="" class="ui small centered image">
+          <h4 class="ui header">{{'extraction'|_}}</h4>
+          <br>
+          <a type="button" class="ui default button" name="button" href="{{ 'extraction'|staticPage }}">{{'learn-more'|_}} <i class="right arrow icon"></i></a>
+        </div>
+        <div class="card">
+          <img src="{{'assets/images/services/good-practice.svg'|theme}}" alt="" class="ui small centered image">
+          <h4 class="ui header">{{'good-scientific-practice'|_}}</h4>
+          <br>
+          <a type="button" class="ui default button" name="button" href="{{ 'good-scientific-practice'|staticPage }}">{{'learn-more'|_}} <i class="right arrow icon"></i></a>
+        </div>
+      </div>
+    </div>
+    <br><br><br><br>
+</div>
+
+<div class="ui sixteen wide stackable grid" id="product">
+  <div class="eight wide column">
+    <div class="ui very padded basic segment">
+      <br>
+      <h1 class="ui header">{{'products'|_}}</h1>
+      <br>
+      <p style="line-height: 2.1;">{{'home-products'|_}}</p>
+      <br>
+      <a type="button" class="ui olive button" name="button" href="{{ 'products'|staticPage }}">{{'learn-more'|_}} <i class="right arrow icon"></i></a>
+    </div>
+  </div>
+  <div class="eight wide column" style="background-image:url('{{'assets/images/slider4.png'|theme}}');background-repeat:no-repeat;background-size:cover;min-height: 500px;">
+  </div>
+</div>
+
+<div class="ui vertical segment" style="overflow:hidden;border-top: solid #8dd649 40px !important;margin-top:-10px;">
+<div class="ui container" style="padding-top:70px;padding-bottom:70px;">
+  <div class="ui two column stackable grid">
+    <div class="column">
+      <div class="ui very padded segment" id="news">
+        <h3 class="ui centered horizontal divider header">
+          <i class="calendar olive icon"></i>  {{'news-and-dates'|_}}
+        </h3>
+        <br>
+        <div class="ui very relaxed divided list">
+          {% for post in recent_posts %}
+            <div class="item">
+              <i class="large file alternate outline middle aligned grey icon"></i>
+              <div class="content">
+                <a class="header" href="{{'post'|page({slug:post.slug})}}">{{post.title}}title</a>
+                <div class="description">Updated {{post.created_at.diffForHumans()}}</div>
+              </div>
+            </div>
+          {% else %}
+            <div class="ui olive centered header">
+              Coming soon
+            </div>
+          {% endfor %}
+        </div>
+        <div class="ui basic center aligned segment">
+          <a type="button" name="button" class="ui olive button" href="{{ 'posts'| page }}">{{'learn-more'|_}} <i class="right arrow icon"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="ui very padded center aligned segment">
+        <h3 class="ui centered horizontal divider header">
+          <i class="comments outline olive icon"></i>  {{'contact'|_}}
+        </h3>
+        <br>
+        <div class="ui stackable grid">
+          <div class="column">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42397.85135548362!2d10.014493032934459!3d48.382315891975885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479966f2b15c193d%3A0x6c496730e3450eab!2sNeu-Ulm!5e0!3m2!1sen!2sde!4v1552339314944" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="ui stackable grid">
+          <div class="three wide column">
+          </div>
+          <div class="twelve wide column">
+            <div class="ui very relaxed centered list">
+              <div class="item">
+                <i class="medium phone middle aligned icon"></i>
+                <div class="content">
+                  <p>+4915255782470</p>
+                </div>
+              </div>
+              <div class="item">
+                <i class="medium envelope middle aligned icon"></i>
+                <div class="content">
+                  <a>info@phytoceltic.de</a>
+                </div>
+              </div>
+              <div class="item">
+                <i class="pin middle aligned medium icon"></i>
+                <div class="content">
+                  <p>Neu-Ulm, Deutschland</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br><br>
+        <a type="button" name="button" class="pulsating ui olive button" href="{{ 'contact'| page }}">{{'learn-more'|_}} <i class="right arrow icon"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+{% put scripts %}
+<script>
+    $(document)
+        .ready(function() {
+          $('#aboutus')
+            .visibility({
+              onTopVisible: function() {
+                $('#aboutus div.column')
+                  .transition({
+                    animation: 'fly right in',
+                    duration: '1s',
+                });
+
+              }
+            })
+          ;
+          $('#product')
+            .visibility({
+              onTopVisible: function() {
+                $('#product div.column')
+                  .transition({
+                    animation: 'fly left in',
+                    duration: '1s',
+                });
+              }
+            })
+          ;
+            var subhead = new Typed('#subhead-typed', {
+              stringsElement: '#subhead',
+              typeSpeed: 50,
+              backSpeed: 10,
+              smartBackspace: true, // this is a default
+              loop: true
+            });
+        })
+    ;
+</script>
+{% endput %}

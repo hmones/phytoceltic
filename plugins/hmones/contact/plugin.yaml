@@ -1,0 +1,6 @@
+plugin:
+    name: 'hmones.contact::lang.plugin.name'
+    description: 'hmones.contact::lang.plugin.description'
+    author: hmones
+    icon: oc-icon-envelope
+    homepage: ''
